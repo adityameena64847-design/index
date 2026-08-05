@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Letter I Needed You To Read 🤍</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    background:#050816;
+    color:white;
+    font-family:"Poppins", sans-serif;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+#stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-5;
+    overflow:hidden;
+}
+
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    opacity:.8;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:50px 20px;
+
+}
+
+
+/* =========================
+   INTRO SECTION
+========================= */
+
+
+.intro{
+
+    text-align:center;
+
+}
+
+
+.intro h1{
+
+    font-size:clamp(2.5rem,6vw,4rem);
+
+    font-weight:600;
+
+    background:
+    linear-gradient(
+    90deg,
+    #ffd6e7,
+    #ff8fb8
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+.intro p{
+
+    margin-top:20px;
+
+    max-width:600px;
+
+    color:#d8d8e8;
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+}
+
+
+.scroll{
+
+    margin-top:40px;
+
+    color:#ffb6d1;
+
+    animation:bounce 2s infinite;
+
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+
+.envelope-container{
+
+    perspective:1000px;
+
+}
+
+
+.envelope{
+
+    width:330px;
+
+    height:220px;
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+
+.envelope-body{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff9fc2,
+    #ff6f9e
+    );
+
+    border-radius:15px;
+
+    box-shadow:
+    0 25px 70px rgba(255,100,160,.4);
+
+    overflow:hidden;
+
+}
+
+
+
+.envelope-body:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+    45deg,
+    transparent 49%,
+    rgba(255,255,255,.35) 50%,
+    transparent 51%
+    );
+
+}
+
+
+
+.flap{
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    border-left:165px solid transparent;
+
+    border-right:165px solid transparent;
+
+    border-top:120px solid #ffb8d3;
+
+    top:0;
+
+    transform-origin:top;
+
+    transition:1s;
+
+    z-index:3;
+
+}
+
+
+
+.envelope.open .flap{
+
+    transform:rotateX(180deg);
+
+}
+
+
+
+.letter-paper{
+
+    position:absolute;
+
+    width:280px;
+
+    height:180px;
+
+    background:#fffafc;
+
+    color:#444;
+
+    left:25px;
+
+    top:30px;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    font-family:"Caveat",cursive;
+
+    font-size:1.4rem;
+
+    text-align:center;
+
+    transition:1s;
+
+    z-index:2;
+
+}
+
+
+
+.envelope.open .letter-paper{
+
+    transform:
+    translateY(-130px);
+
+}
+
+
+/* =========================
+   LETTER SECTION
+========================= */
+
+
+.letter-section{
+
+    display:none;
+
+}
+
+
+
+.letter-card{
+
+    max-width:850px;
+
+    width:100%;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+    0 30px 100px rgba(0,0,0,.4);
+
+}
+
+
+
+.letter-title{
+
+    text-align:center;
+
+    font-size:3rem;
+
+    color:#ffb6d1;
+
+    margin-bottom:40px;
+
+    font-family:"Caveat",cursive;
+
+}
+
+
+
+.type-text{
+
+    min-height:250px;
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    color:#f4edf2;
+
+}
+
+
+
+.cursor{
+
+    display:inline-block;
+
+    width:8px;
+
+    height:25px;
+
+    background:#ff9fc2;
+
+    animation:blink .8s infinite;
+
+}
+
+
+
+/* =========================
+   WHAT I WANTED SECTION
+========================= */
+
+
+.wanted{
+
+    flex-direction:column;
+
+}
+
+
+
+.wanted h2{
+
+    font-size:3rem;
+
+    font-family:"Caveat",cursive;
+
+    color:#ffb6d1;
+
+    margin-bottom:40px;
+
+}
+
+
+.cards{
+
+    display:flex;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+
+
+.card{
+
+    width:260px;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+
+    transition:.4s;
+
+}
+
+
+
+.card:hover{
+
+    transform:
+    translateY(-15px);
+
+}
+
+
+
+.card span{
+
+    font-size:40px;
+
+    display:block;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+    color:#e7dce3;
+
+    line-height:1.7;
+
+}
+
+
+
+/* =========================
+   PROMISE
+========================= */
+
+
+.promise-box{
+
+    max-width:700px;
+
+    text-align:center;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.07);
+
+}
+
+
+
+.promise-box h2{
+
+    color:#ffb6d1;
+
+    font-family:"Caveat",cursive;
+
+    font-size:3rem;
+
+}
+
+
+.promise-box p{
+
+    margin-top:25px;
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    color:#eee;
+
+}
+
+
+
+/* =========================
+   EXTRA ANIMATIONS
+========================= */
+
+
+@keyframes blink{
+
+    0%,50%{
+        opacity:1;
+    }
+
+    51%,100%{
+        opacity:0;
+    }
+
+}
+
+
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(15px);
+    }
+
+}
+
+
+
+@keyframes glow{
+
+    0%,100%{
+
+        box-shadow:
+        0 0 20px rgba(255,150,190,.3);
+
+    }
+
+
+    50%{
+
+        box-shadow:
+        0 0 60px rgba(255,150,190,.8);
+
+    }
+
+}
+
+
+
+@keyframes float{
+
+    0%{
+
+        transform:
+        translateY(0)
+        rotate(0deg);
+
+    }
+
+
+    100%{
+
+        transform:
+        translateY(-120vh)
+        rotate(360deg);
+
+    }
+
+}
+
+
+
+@keyframes shooting{
+
+    from{
+
+        transform:
+        translateX(0)
+        translateY(0);
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:
+        translateX(-700px)
+        translateY(700px);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* =========================
+   GLOW EFFECTS
+========================= */
+
+
+.envelope{
+
+    animation:glow 3s infinite;
+
+}
+
+
+
+.letter-card{
+
+    animation:
+    fadeUp 1.5s ease;
+
+}
+
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+
+
+
+/* =========================
+   FLOATING PARTICLES
+========================= */
+
+
+.particle{
+
+    position:fixed;
+
+    bottom:-20px;
+
+    color:#ffb6d1;
+
+    opacity:.6;
+
+    pointer-events:none;
+
+    animation:
+    float linear infinite;
+
+    z-index:-1;
+
+}
+
+
+
+
+
+/* =========================
+   SHOOTING STARS
+========================= */
+
+
+.shooting-star{
+
+    position:fixed;
+
+    width:120px;
+
+    height:2px;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    white,
+    transparent
+    );
+
+    transform:
+    rotate(-45deg);
+
+    animation:
+    shooting 2s linear infinite;
+
+    opacity:.8;
+
+}
+
+
+
+
+
+/* =========================
+   FINAL POLISH
+========================= */
+
+
+body:before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+    circle at top,
+    rgba(255,120,170,.15),
+    transparent 35%
+    );
+
+
+    pointer-events:none;
+
+}
+
+
+
+
+
+/* =========================
+   MOBILE DESIGN
+========================= */
+
+
+@media(max-width:700px){
+
+
+    .letter-card{
+
+        padding:30px 20px;
+
+    }
+
+
+
+    .letter-title,
+    .wanted h2,
+    .promise-box h2{
+
+        font-size:2.2rem;
+
+    }
+
+
+
+    .type-text{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+
+
+    .envelope{
+
+        width:280px;
+
+        height:190px;
+
+    }
+
+
+
+    .flap{
+
+        border-left-width:140px;
+
+        border-right-width:140px;
+
+        border-top-width:100px;
+
+    }
+
+
+
+    .letter-paper{
+
+        width:240px;
+
+        left:20px;
+
+    }
+
+
+
+    .card{
+
+        width:90%;
+
+    }
+
+
+}
+
+
+
+
+
+/* =========================
+   CURSOR EFFECT
+========================= */
+
+
+.cursor-glow{
+
+    position:fixed;
+
+    width:25px;
+
+    height:25px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+    circle,
+    rgba(255,180,210,.8),
+    transparent 70%
+    );
+
+
+    pointer-events:none;
+
+    transform:
+    translate(-50%,-50%);
+
+    z-index:100;
+
+}
+
+
+
+
+
+/* =========================
+   BUTTON
+========================= */
+
+
+.continue-btn{
+
+    margin-top:40px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    #ff8fb8,
+    #ff5d96
+    );
+
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+
+
+.continue-btn:hover{
+
+    transform:
+    scale(1.08);
+
+    box-shadow:
+    0 0 30px rgba(255,100,160,.8);
+
+}
+
+
+
+
+
+/* =========================
+   END SECTION
+========================= */
+
+
+.final{
+
+    text-align:center;
+
+}
+
+
+.final h1{
+
+    font-family:"Caveat",cursive;
+
+    font-size:4rem;
+
+    color:#ffb6d1;
+
+}
+
+
+
+.final p{
+
+    max-width:650px;
+
+    margin:30px auto;
+
+    line-height:2;
+
+    font-size:1.15rem;
+
+    color:#eee;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="stars"></div>
+
+
+
+<section class="intro">
+
+<div>
+
+<h1>
+There's Something I Need To Say
+</h1>
+
+
+<p>
+Not because I want to make excuses,
+but because I want you to know what happened
+and how much I care.
+</p>
+
+
+<div class="scroll">
+↓ Open the letter ↓
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+<section>
+
+<div class="envelope-container">
+
+<div class="envelope" id="envelope">
+
+
+<div class="envelope-body"></div>
+
+<div class="flap"></div>
+
+
+<div class="letter-paper">
+
+For you 🤍
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="letter-section" id="letter">
+
+
+<div class="letter-card">
+
+
+<h2 class="letter-title">
+A Letter From Me
+</h2>
+
+
+<div class="type-text" id="typing">
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="wanted">
+
+
+<h2>
+What I Really Wanted
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<span>😊</span>
+
+<p>
+I wanted to be someone who makes you laugh and feel comfortable.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<span>🤍</span>
+
+<p>
+I wanted you to know you could share anything with me.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<span>🌙</span>
+
+<p>
+I never wanted to be the person who made you feel ignored.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section>
+
+
+<div class="promise-box">
+
+
+<h2>
+My Promise
+</h2>
+
+
+<p>
+I can't promise technology won't fail again,
+but I can promise that my silence will never change
+how much I care about you.
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<script>
+
+/* =========================
+   ENVELOPE OPENING
+========================= */
+
+const envelope = document.getElementById("envelope");
+const letter = document.getElementById("letter");
+
+envelope.addEventListener("click",()=>{
+
+    envelope.classList.add("open");
+
+    setTimeout(()=>{
+
+        letter.style.display="flex";
+
+        letter.scrollIntoView({
+            behavior:"smooth"
+        });
+
+        startTyping();
+
+    },1200);
+
+});
+
+
+
+
+
+/* =========================
+   TYPEWRITER LETTER
+========================= */
+
+
+const message = `
+
+I know it probably felt like I disappeared,
+and I am really sorry for making you feel that way.
+
+Something happened with my Discord and I couldn't send messages
+for almost an hour. When I finally got back,
+I tried texting you because I realized how it must have looked.
+
+I am not saying this as an excuse.
+I just want you to know what actually happened.
+
+The last thing I ever wanted was to make you feel ignored.
+
+I want to be someone who makes you laugh,
+someone you feel comfortable talking to,
+and someone you know genuinely cares about you.
+
+I don't want to be the reason you feel hurt.
+I want to be someone who makes your day a little better.
+
+I don't expect this website to fix everything.
+
+I just wanted you to know what happened
+and how genuinely sorry I am.
+
+If there's one thing I hope you remember after reading this,
+it's that my silence wasn't a choice—
+but caring about you is.
+
+You matter to me,
+and I never wanted to make you feel ignored. 🤍
+
+`;
+
+
+let index = 0;
+
+
+function startTyping(){
+
+const box=document.getElementById("typing");
+
+
+function type(){
+
+    if(index < message.length){
+
+        box.innerHTML += message.charAt(index);
+
+        index++;
+
+        setTimeout(type,35);
+
+    }
+
+    else{
+
+        box.innerHTML +=
+        '<span class="cursor"></span>';
+
+    }
+
+}
+
+
+type();
+
+}
+
+
+
+
+
+/* =========================
+   CREATE STARS
+========================= */
+
+
+const stars=document.getElementById("stars");
+
+
+for(let i=0;i<180;i++){
+
+    let star=document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=
+    Math.random()*100+"vw";
+
+    star.style.top=
+    Math.random()*100+"vh";
+
+
+    star.style.opacity=
+    Math.random();
+
+
+    let size=
+    Math.random()*4+1;
+
+
+    star.style.width=size+"px";
+    star.style.height=size+"px";
+
+
+    stars.appendChild(star);
+
+}
+
+
+
+
+
+/* =========================
+   FLOATING HEART PARTICLES
+========================= */
+
+
+function createParticle(){
+
+    let particle=document.createElement("div");
+
+    particle.className="particle";
+
+    particle.innerHTML =
+    Math.random()>0.5 ? "♡" : "✦";
+
+
+    particle.style.left=
+    Math.random()*100+"vw";
+
+
+    particle.style.fontSize=
+    (15+Math.random()*30)+"px";
+
+
+    particle.style.animationDuration=
+    (8+Math.random()*8)+"s";
+
+
+    document.body.appendChild(particle);
+
+
+    setTimeout(()=>{
+
+        particle.remove();
+
+    },15000);
+
+}
+
+
+
+setInterval(createParticle,600);
+
+
+
+
+
+/* =========================
+   SHOOTING STARS
+========================= */
+
+
+function shootingStar(){
+
+    let star=document.createElement("div");
+
+    star.className="shooting-star";
+
+
+    star.style.top=
+    Math.random()*50+"vh";
+
+
+    star.style.right="-150px";
+
+
+    document.body.appendChild(star);
+
+
+    setTimeout(()=>{
+
+        star.remove();
+
+    },2000);
+
+}
+
+
+
+setInterval(shootingStar,5000);
+
+
+
+
+
+/* =========================
+   CURSOR GLOW
+========================= */
+
+
+const glow=document.createElement("div");
+
+glow.className="cursor-glow";
+
+document.body.appendChild(glow);
+
+
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+glow.style.left=e.clientX+"px";
+
+glow.style.top=e.clientY+"px";
+
+});
+
+
+
+
+
+/* =========================
+   PAGE FADE
+========================= */
+
+
+window.addEventListener(
+"load",
+()=>{
+
+document.body.style.opacity="1";
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
